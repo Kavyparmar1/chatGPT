@@ -67,7 +67,7 @@ const RegisterPage = () => {
     
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        "https://chatgpt-h38f.onrender.com/api/auth/register",
         {
           fullName: {
             firstName: formData.firstName,

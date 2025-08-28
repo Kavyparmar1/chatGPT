@@ -82,7 +82,7 @@ const ChatInterface = () => {
 
       // 🔹 Setup socket
   useEffect(() => {
-    const newSocket = io("http://localhost:3000", { withCredentials: true });
+    const newSocket = io("https://chatgpt-h38f.onrender.com", { withCredentials: true });
     setSocket(newSocket);
 
     newSocket.on("connect", () => {
@@ -168,7 +168,7 @@ const ChatInterface = () => {
     if (!chatTitle) return;
 
   try {
-      const response = await axios.post("http://localhost:3000/api/chat", {
+      const response = await axios.post("https://chatgpt-h38f.onrender.com/api/chat", {
       title: chatTitle
     }, {
       withCredentials:true

@@ -5,6 +5,7 @@
     const chatRoutes = require('./routes/chat.routes')
     const cookieparser = require('cookie-parser')
     const cors = require('cors')
+    const path = require('path')
 
     //middleware
     app.use(express.json())
@@ -13,7 +14,11 @@
         credentials:true,
     }))
     app.use(cookieparser())
+    app.use(express.static(path.join(__dirname, '../public')))
     app.use('/api/auth', authRoutes)
     app.use('/api/chat', chatRoutes)
 
+    app.get("*name",(req,res)=>{
+        res.sendFile(path.join(__dirname, '../public/index.html'))
+    })
     module.exports = app

@@ -52,7 +52,7 @@ const LoginPage = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/login",
+        "https://chatgpt-h38f.onrender.com/api/auth/login",
         {
           email: formData.email,
           password: formData.password,
